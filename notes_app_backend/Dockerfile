@@ -8,8 +8,7 @@ COPY src src
 # Build your application into a JAR
 RUN ./mvnw clean package -DskipTests
 
-# Use a lightweight JRE image for the final, smaller image
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
