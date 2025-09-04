@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/note")
-@CrossOrigin(origins = "https://notes-app-5-t9nx.onrender.com")
+@CrossOrigin(origins = "https://notes-app-fawn-mu.vercel.app/")
 public class NoteController {
 
     // Logger logger = (Logger) LoggerFactory.getLogger(NoteController.class);
