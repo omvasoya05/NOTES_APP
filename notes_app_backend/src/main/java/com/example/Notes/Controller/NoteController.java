@@ -12,13 +12,14 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/note")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://notes-app-5-t9nx.onrender.com")
 public class NoteController {
 
-//    Logger logger = (Logger) LoggerFactory.getLogger(NoteController.class);
+    // Logger logger = (Logger) LoggerFactory.getLogger(NoteController.class);
 
     @Autowired
     NoteService noteService;
+
     @PostMapping("/addNote")
     NoteResponse addNote(@RequestBody Note note) {
         boolean isAdded = noteService.addNote(note);
@@ -37,7 +38,7 @@ public class NoteController {
     }
 
     @GetMapping("/showAllNotes")
-    List<Note> showNotes(){
+    List<Note> showNotes() {
 
         return noteService.showNotes();
     }

@@ -22,9 +22,9 @@ export default function NoteForm({ open, mode, note, onClose }) {
 
   const handleSubmit = async () => {
     if (mode === "edit") {
-      await axios.put(`http://localhost:8080/note/updateNote/${note.id}`, data);
+      await axios.put(`https://notes-app-5-t9nx.onrender.com/note/updateNote/${note.id}`, data);
     } else {
-      await axios.post("http://localhost:8080/note/addNote", data);
+      await axios.post("https://notes-app-5-t9nx.onrender.com/note/addNote", data);
     }
     onClose(true); // refresh list
   };

@@ -16,20 +16,20 @@ export default function NoteList() {
 
   // load all notes
   useEffect(() => {
-    axios.get("http://localhost:8080/note/showAllNotes")
+    axios.get("https://notes-app-5-t9nx.onrender.com/note/showAllNotes")
       .then(res => setNotes(res.data))
       .catch(console.error);
   }, []);
 
   const refresh = () => {
-    axios.get("http://localhost:8080/note/showAllNotes")
+    axios.get("https://notes-app-5-t9nx.onrender.com/note/showAllNotes")
       .then(res => setNotes(res.data))
       .catch(console.error);
   };
 
   const handleDelete = async (id) => {
     if (window.confirm("Delete note?")) {
-      await axios.delete(`http://localhost:8080/note/deleteNote/${id}`);
+      await axios.delete(`https://notes-app-5-t9nx.onrender.com/note/deleteNote/${id}`);
       setNotes(notes.filter(n => n.id !== id));
       setSelected(null);
     }
